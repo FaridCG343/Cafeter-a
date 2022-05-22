@@ -8,23 +8,21 @@ package Cafeteria;
  *
  * @author farid
  */
-public class Capuchino extends Vaso {
+public class Expresso extends Vaso {
 
     private Tamanio tamanio;
     private Extras extra1;
     private Extras extra2;
     private Extras extra3;
-    private Leches leches;
 
-    public Capuchino(Tamanio tamanio, Extras extra1, Extras extra2, Extras extra3, Leches leches) {
+    public Expresso(Tamanio tamanio, Extras extra1, Extras extra2, Extras extra3) {
         this.tamanio = tamanio;
         this.extra1 = extra1;
         this.extra2 = extra2;
         this.extra3 = extra3;
-        this.leches = leches;
     }
 
-    public Capuchino() {
+    public Expresso() {
         this.extra1 = null;
         this.extra2 = null;
         this.extra3 = null;
@@ -62,17 +60,9 @@ public class Capuchino extends Vaso {
         this.extra3 = extra3;
     }
 
-    public Leches getLeches() {
-        return leches;
-    }
-
-    public void setLeches(Leches leches) {
-        this.leches = leches;
-    }
-
     @Override
     public double Precio() {
-        double precio = 25;
+        double precio = 20;
         switch (this.tamanio) {
             case Chico -> {
                 precio += 10;
@@ -83,11 +73,6 @@ public class Capuchino extends Vaso {
             case Grande -> {
                 precio += 20;
             }
-        }
-        if (this.leches == Leches.Nutrileche) {
-            precio += 10;
-        } else {
-            precio += 15;
         }
         if (extra1 != null) {
             switch (extra1) {
@@ -152,7 +137,7 @@ public class Capuchino extends Vaso {
         } else {
             e = extra1.toString() + ", " + extra2.toString() + ", " + extra3.toString();
         }
-        return super.toString() + "\nCapuchino" + "\nTamaño:" + tamanio + "\nExtras: " + e + "\nLeches=" + leches;
+        return super.toString() + "\nExpresso" + "\nTamaño:" + tamanio + "\nExtras: " + e;
     }
 
 }

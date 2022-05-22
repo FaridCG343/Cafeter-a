@@ -8,7 +8,7 @@ package Cafeteria;
  *
  * @author farid
  */
-public class Capuchino extends Vaso {
+public class Mokaccino extends Vaso {
 
     private Tamanio tamanio;
     private Extras extra1;
@@ -16,7 +16,7 @@ public class Capuchino extends Vaso {
     private Extras extra3;
     private Leches leches;
 
-    public Capuchino(Tamanio tamanio, Extras extra1, Extras extra2, Extras extra3, Leches leches) {
+    public Mokaccino(Tamanio tamanio, Extras extra1, Extras extra2, Extras extra3, Leches leches) {
         this.tamanio = tamanio;
         this.extra1 = extra1;
         this.extra2 = extra2;
@@ -24,7 +24,7 @@ public class Capuchino extends Vaso {
         this.leches = leches;
     }
 
-    public Capuchino() {
+    public Mokaccino() {
         this.extra1 = null;
         this.extra2 = null;
         this.extra3 = null;
@@ -72,7 +72,7 @@ public class Capuchino extends Vaso {
 
     @Override
     public double Precio() {
-        double precio = 25;
+        double precio = 30;
         switch (this.tamanio) {
             case Chico -> {
                 precio += 10;
@@ -152,7 +152,6 @@ public class Capuchino extends Vaso {
         } else {
             e = extra1.toString() + ", " + extra2.toString() + ", " + extra3.toString();
         }
-        return super.toString() + "\nCapuchino" + "\nTamaño:" + tamanio + "\nExtras: " + e + "\nLeches=" + leches;
+        return super.toString() + "\nMokaccino" + "\nTamaño:" + tamanio + "\nExtras: " + e + "\nLeches=" + leches;
     }
-
 }
